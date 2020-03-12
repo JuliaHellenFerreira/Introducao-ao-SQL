@@ -56,7 +56,7 @@ FROM people
 
 ## Capítulo 2º
 
-Vamos aprender as funções WHERE, AND.
+Vamos aprender as funções WHERE, AND, OR.
 
 - Para filtar valores númericos podemos usar:
 
@@ -82,13 +82,30 @@ FROM people
 
 WHERE birthdate = '1974-11-11'
 
-- Se quisermos, filtrar mais de uma condição usamos o AND:
+- Se quisermos, filtrar mais de uma condição usamos o AND, mostra registro se todas as condições forem verdadeiras:
 
 SELECT title
 
 FROM films
 
-WHERE release_year > 1994 AND < 2000
+WHERE release_year > 1994 AND 
+
+release_year < 2000
+
+- Para o OR, mostra um registro se pelo menos uma das condições for verdadeiras:
+
+SELECT title, release_year
+
+FROM films
+
+WHERE releas_year >= 1990 
+
+AND release < 2000
+
+AND ( language = 'French' OR language = 'Spanish'
+
+AND gross > 2000000
+
 
 
 
