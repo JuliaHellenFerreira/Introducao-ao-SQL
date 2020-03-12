@@ -56,7 +56,7 @@ FROM people
 
 ## Capítulo 2º
 
-Vamos aprender as funções WHERE, AND, OR.
+Vamos aprender as funções WHERE, AND, OR, BETWEEN.
 
 - Para filtar valores númericos podemos usar:
 
@@ -106,6 +106,25 @@ AND ( language = 'French' OR language = 'Spanish'
 
 AND gross > 2000000
 
+- Para filtrar valores númericos em um intervalo usamos o BETWEEN:
+
+SELECT title, release_year
+
+FROM films
+
+WHERE release_year BETWEEN 1990 AND 2000
+
+- Outro exemplo:
+
+SELECT title, release_year
+
+FROM films
+
+WHERE release_year BETWEEN 1990 AND 2000
+
+AND budget > 100000000
+
+AND (language ='Spanish' OR language = 'French')
 
 
 
