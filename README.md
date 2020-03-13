@@ -56,7 +56,7 @@ FROM people
 
 ## Capítulo 2º
 
-Vamos aprender as funções WHERE, AND, OR, BETWEEN.
+Vamos aprender as funções WHERE, AND, OR, BETWEEN, WHERE IN, NULL, LIKE.
 
 - Para filtar valores númericos podemos usar:
 
@@ -125,6 +125,58 @@ WHERE release_year BETWEEN 1990 AND 2000
 AND budget > 100000000
 
 AND (language ='Spanish' OR language = 'French')
+
+- Para filtrar informações em multiplos usaremos IN:
+
+SELECT title, release_year
+
+FROM films
+
+WHERE release_year IN (1990, 2000)
+
+- NULL representa a ausência ou um valor inválido. Podemos usar para checak a existência de dados:
+
+SELECT name
+
+FROM peolpe
+
+WHERE deathdate IS NULL
+
+- Exemplo com contagem:
+
+SELECT COUNT (*)
+
+FROM films
+
+WHERE language IS NULL
+
+- Se quisermos, filtrar partes de uma texto ou valor, usamos o LIKE:
+
+SELECT name
+
+FROM people
+
+WHERE name LIKE 'B%'
+
+- Quando queremos filtrar a segunda letra (LIKE) :
+
+SELECT name
+
+FROM people
+
+WHERE name LIKE '_r%'
+
+- Quando queremos filtrar os que não começam com A  LIKE) :
+
+SELECT name
+
+FROM people
+
+WHERE name NOT LIKE 'A%'
+
+
+
+
 
 
 
