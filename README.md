@@ -174,9 +174,30 @@ FROM people
 
 WHERE name NOT LIKE 'A%'
 
+## Capítulo 3º
 
+Neste capítulo iremos realizar algumas contas. As funções para isso é: AVG, MAX, SUM, MIN,
 
+- Soma (SUM):
 
+SELECT SUM (duration)
 
+FROM films
 
+- Média (AVG):
 
+SELECT AVG (duration)
+
+FROM films
+
+- Mínino (MIN):
+
+SELECT MIN ( duration )
+
+FROM films
+
+- Máximo ( MAX ):
+
+SELECT MAX ( duration )
+
+FROM films
