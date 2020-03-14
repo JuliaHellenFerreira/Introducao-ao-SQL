@@ -56,7 +56,7 @@ FROM people
 
 ## Capítulo 2º
 
-Vamos aprender as funções WHERE, AND, OR, BETWEEN, WHERE IN, NULL, LIKE NOT LIKE, contas básicas, AS .
+Vamos aprender as funções WHERE, AND, OR, BETWEEN, WHERE IN, NULL, LIKE e NOT LIKE.
 
 - Para filtar valores númericos podemos usar:
 
@@ -176,7 +176,7 @@ WHERE name NOT LIKE 'A%'
 
 ## Capítulo 3º
 
-Neste capítulo iremos realizar algumas contas. As funções para isso é: AVG, MAX, SUM, MIN,
+Neste capítulo iremos realizar algumas contas. As funções para isso é: AVG, MAX, SUM, MIN, contas básicas e AS:
 
 - Soma (SUM):
 
@@ -232,3 +232,20 @@ SELECT AVG(duration) / 60.00 AS avg_duration_hours
 
 FROM films
 
+- Se quisermos, realizar mais operações matemáticas mas usando outras funções, podemos fazer:
+
+SELECT COUNT(deathdate) * 100.0 / COUNT(*) AS percentage_dead
+
+FROM people
+
+- Outro exemplo:
+
+SELECT MAX(release_year) - MIN(release_year) AS difference
+
+FROM films
+
+- Vejamos de outra forma só que com decadas:
+
+SELECT (MAX(release_year) - MIN(release_year)) / 10.0 AS number_of_decades
+
+FROM films
