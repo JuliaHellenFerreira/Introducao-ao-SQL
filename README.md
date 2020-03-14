@@ -56,7 +56,7 @@ FROM people
 
 ## Capítulo 2º
 
-Vamos aprender as funções WHERE, AND, OR, BETWEEN, WHERE IN, NULL, LIKE.
+Vamos aprender as funções WHERE, AND, OR, BETWEEN, WHERE IN, NULL, LIKE NOT LIKE, contas básicas, AS .
 
 - Para filtar valores númericos podemos usar:
 
@@ -201,3 +201,34 @@ FROM films
 SELECT MAX ( duration )
 
 FROM films
+
+- Vamos ver como usar essas funções junto com o WHERE:
+
+SELECT AVG(gross)
+
+FROM films
+
+WHERE title LIKE 'A%'
+
+- Também conseguimos realizar contas básicas:
+
+SELECT (4 * 3) AS results
+
+- Agora, se eu quero esses resultados organizados em uma coluna posso usar AS, vejamos:
+
+SELECT title, (gross - budget) AS net_profit
+
+FROM films
+
+- Outra exemplo:
+
+SELECT title, (duration / 60.0) AS duration_hours
+
+FROM films
+
+- Com outras funções:
+
+SELECT AVG(duration) / 60.00 AS avg_duration_hours
+
+FROM films
+
