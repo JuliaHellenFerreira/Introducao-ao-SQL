@@ -362,4 +362,14 @@ ORDER BY country
 
 LIMIT 5
 
-- Vamos para última função, JOIN: 
+- Vamos para última função, JOIN (Podemos relacionar tabelas): 
+
+SELECT title, imdb_score
+
+FROM films
+
+JOIN reviews
+
+ON films.id = reviews.film_id
+
+WHERE title = 'To Kill a Mockingbird';
