@@ -332,3 +332,18 @@ FROM reviews
 
 GROUP BY imdb_score
 
+- Agora, veremos o HAVING que usamos num modo grupo, ele serve para filtrar grupos quando estamos usando o GROUP BY. Já o WHERE usamos para filtrar linhas, estpá é a diferença. Vejamos um exemplo:
+
+SELECT release_year, AVG(budget) AS avg_budget,
+
+AVG(gross) AS avg_gross
+
+FROM films
+
+WHERE release_year > 1990
+
+GROUP BY release_year
+
+HAVING AVG(budget) > 60000000
+
+ORDER BY avg_gross DESC;
