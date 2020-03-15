@@ -252,7 +252,7 @@ FROM films
 
 ## Capítulo 4º
 
-Vamos aprender nesse último capítulo: ORDER BY,
+Vamos aprender nesse último capítulo: ORDER BY, DESC, GROUP BY, HAVING, 
  
 - Para colocar em ordem alfabetica:
 
@@ -347,3 +347,19 @@ GROUP BY release_year
 HAVING AVG(budget) > 60000000
 
 ORDER BY avg_gross DESC;
+
+- Vejamos um exemplo mais completo:
+
+SELECT country, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+
+FROM films
+
+GROUP BY country
+
+HAVING COUNT (title) > 10 
+
+ORDER BY country
+
+LIMIT 5
+
+- Vamos para última função, JOIN: 
