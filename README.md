@@ -249,3 +249,86 @@ FROM films
 SELECT (MAX(release_year) - MIN(release_year)) / 10.0 AS number_of_decades
 
 FROM films
+
+## Capítulo 4º
+
+Vamos aprender nesse último capítulo: ORDER BY,
+ 
+- Para colocar em ordem alfabetica:
+
+SELECT *
+
+FROM people
+
+ORDER BY name
+
+- Exemplo:
+
+SELECT *
+
+FROM films
+
+WHERE release_year <> 2015
+
+ORDER BY duration
+
+- Outro exemplo:
+
+SELECT title, gross
+
+FROM films
+
+WHERE title LIKE 'M%'
+
+ORDER BY title 
+
+- Para colocar em ordem decrescente basta colocar DESC no final:
+
+SELECT imdb_score, film_id
+
+FROM reviews
+
+ORDER BY imdb_score DESC
+
+- Também podemos colocar em ordem mais de uma coluna:
+
+SELECT birthdate, name
+
+FROM people
+
+ORDER BY birthdate, name
+
+- Vamos aprender agora como usar o GROUP BY:
+
+SELECT release_year, count (*)
+
+FROM films
+
+GROUP BY release_year
+
+ORDER BY count DESC
+
+- Vejamos mais exemplos:
+
+SELECT release_year, AVG( duration )
+
+FROM films
+
+GROUP BY release_year
+
+- O GROUP BY agrupa linhas baseado em semelhanças entre elas:
+
+SELECT release_year, MAX(budget)
+
+FROM films 
+
+GROUP BY release_year
+
+- Exemplo:
+
+SELECT imdb_score, count(*)
+
+FROM reviews
+
+GROUP BY imdb_score
+
